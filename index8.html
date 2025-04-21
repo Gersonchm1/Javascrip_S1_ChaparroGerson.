@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+    </head>
+<body>
+    <h1>Iniciar Sesión</h1>
+    <form>
+        <div>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario">
+        </div>
+        <div>
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" name="clave">
+        </div>
+        <button type="button" onclick="loguear()">Log in</button>
+    </form>
+
+    <script>
+        function loguear() {
+            let user = document.getElementById("usuario").value;
+            let pass = document.getElementById("clave").value;
+            if (user === "juan" && pass === "1234") {
+                window.location.href = "./index3.html";
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+    </script>
+</body>
+</html>

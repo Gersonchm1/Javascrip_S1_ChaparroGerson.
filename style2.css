@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url("./img/OIP (1).jfif")no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.form-box{
+  position: relative;
+  width: 400px;
+  height: auto; /* Ajustar altura automáticamente */
+  padding: 30px; /* Añadir un poco de espacio interno */
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  justify-content: center;
+  align-items: center;
+}
+h2{
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px; /* Espacio debajo del título */
+}
+.options {
+  display: flex;
+  flex-direction: column; /* Alinear botones verticalmente */
+  width: 100%;
+}
+.options button{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff; /* Fondo blanco como el botón anterior */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 15px; /* Espacio entre los botones */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+.options button:hover {
+  background-color: #ddd; /* Cambiar color al pasar el ratón */
+}
+a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.9em;
+  margin-top: 20px; /* Espacio encima del enlace */
+}

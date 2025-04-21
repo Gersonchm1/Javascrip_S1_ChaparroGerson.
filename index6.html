@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style6.css">
+</head>
+<body>
+    <header>
+        <h1>Panel Principal</h1>
+        <div class="usuario-info">
+            <span id="nombre-usuario-header">Usuario</span>
+            <button id="boton-perfil-header">Mi Perfil</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor-gestion">
+            <div class="selector-salon">
+                <label for="salon-selector">Seleccionar Salón:</label>
+                <select id="salon-selector">
+                    <option value="">-- Seleccionar --</option>
+                    <option value="1A">1A</option>
+                    <option value="1B">1B</option>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    </select>
+                <button onclick="mostrarListaEstudiantes()">Mostrar Estudiantes</button>
+            </div>
+
+            <div id="contenedor-tabla-estudiantes">
+                <div class="cabecera-gestion">
+                    <h2>Lista de Estudiantes</h2>
+                    <button class="boton-crear" onclick="window.location.href='./crear_estudiante.html'">Crear Nuevo Estudiante</button>
+                </div>
+                <table id="tabla-estudiantes">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    
+    
+</body>
+</html>

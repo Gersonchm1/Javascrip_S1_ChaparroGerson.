@@ -1,0 +1,63 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #FFD700; /* Amarillo chillón para más efecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: #FFFACD; /* Amarillo pálido */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #FF4500; /* Naranja brillante */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #8B4513; /* Marrón */
+    margin-bottom: 30px;
+}
+
+.mensaje-secreto {
+    font-size: 1.5em;
+    color: #008000; /* Verde brillante */
+    font-weight: bold;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+button {
+    background-color: #4682B4; /* Azul acero */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2E64FE; /* Azul más brillante */
+}
+a {
+    text-decoration: none;
+    color: #FF4500; /* Naranja brillante */
+    font-size: 1vw;
+   
+    display: inline-block;
+    transition: color 0.3s ease;
+}

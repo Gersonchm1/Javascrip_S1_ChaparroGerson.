@@ -1,0 +1,197 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+}
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+}
+
+.usuario-info span {
+    margin-right: 15px;
+}
+
+#boton-perfil-header {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#boton-perfil-header:hover {
+    background-color: #003d80;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Para que el main ocupe el espacio restante */
+}
+
+.contenedor-gestion {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+}
+
+.selector-salon {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.selector-salon label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.selector-salon select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 200px;
+}
+
+.selector-salon button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.selector-salon button:hover {
+    background-color: #0056b3;
+}
+
+.cabecera-gestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cabecera-gestion h2 {
+    color: #007bff;
+    margin: 0;
+    font-size: 2em;
+}
+
+.boton-crear {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-crear:hover {
+    background-color: #1e7e34;
+}
+
+#tabla-estudiantes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Para que el border-radius funcione en la tabla */
+}
+
+#tabla-estudiantes th,
+#tabla-estudiantes td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#tabla-estudiantes th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+#tabla-estudiantes tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centrar los botones de acción */
+}
+
+.boton-editar,
+.boton-eliminar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-editar:hover {
+    background-color: #0056b3;
+}
+
+.boton-eliminar {
+    background-color: #dc3545;
+}
+
+.boton-eliminar:hover {
+    background-color: #c82333;
+}
+
+#contenedor-tabla-estudiantes {
+    display: none;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
