@@ -1,31 +1,17 @@
 
+let currentPokemonId = null
 
-function fetchPoke(){
-    let xhr = new XMLHttpRequest();
-    let numPokemon=101;
-    let link= `https://pokeapi.co/api/v2/pokemon/${numPokemon}`;
-    
-    xhr.open('GET',link,true);
-    
-    xhr.onreadystatechange = function(){
-        if(this.status ==200){
-            let respuesta = JSON.parse(this.responseText);
-            
-            displayPoke(respuesta);
-        }
-    };
-    
-    xhr.send();
-}
 
-fetchPoke();
 
 function displayPoke(data){
     let informacionHTML = document.getElementById('daticos');
+    currentPokemonId = data.id; // Actualizamos el ID del Pokémon actual
    
     const gif = data["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"];
     const imagenEstatica = data["sprites"]["front_default"];
-    if (gif) {
+    let imagenSrc = gif ? gif : imagenEstatica;
+    const altText = gif ? `GIF de ${data["name"]}` : `Imagen de ${data["name"]}`;
+   
         
         informacionHTML.innerHTML = `
         <div class="pokemon-container">
@@ -35,18 +21,8 @@ function displayPoke(data){
             
         
             
-            
-        `}
-        else if (imagenEstatica) {
-            informacionHTML.innerHTML= `
-                
-                <div class="pokemon-container">
-                    <img class="pokemon-image" src="${imagenEstatica}" alt="Imagen de ${data["name"]}" />
-                    <p class="pokemon-name">${data["name"]}</p> <p class="pokemon-num">${data["id"]}-</p>
-                </div>
-            `; }
        
-    
+    `;
 }
 document.getElementById('pokemon-input').addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
@@ -58,7 +34,7 @@ async function fetchPokemon(query) {
     const informacionHTML = document.getElementById('daticos');
     try {
        
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
         
 
         const data = await response.json();
@@ -69,6 +45,23 @@ async function fetchPokemon(query) {
         informacionHTML.innerHTML = `<p>Pokémon no encontrado. Intenta con otro nombre o ID.</p>`;
     }
 }
+function loadPreviousPokemon() {
+    if (currentPokemonId > 1) {
+        fetchPokemon(currentPokemonId - 1);
+    }
+}
+
+function loadNextPokemon() {
+    if (currentPokemonId < 1010) { // Ajusta el límite máximo de Pokémon si es necesario
+        fetchPokemon(currentPokemonId + 1);
+    }
+}
+
+document.getElementById('botoncito').addEventListener('click', loadPreviousPokemon);
+document.getElementById('botoncito2').addEventListener('click', loadNextPokemon);
+
+// Cargar un Pokémon inicial al cargar la página (opcional)
+fetchPokemon(1);
 
 
 

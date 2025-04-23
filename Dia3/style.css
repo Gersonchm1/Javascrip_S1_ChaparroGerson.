@@ -183,3 +183,9 @@
         box-shadow: 1px 1px 0px black; 
         transform: translate(1px, 1px); 
     }
+    input:focus ~ label,
+    input:valid ~ label{
+    top: -0.010px;
+    font-size: 0.8rem;
+
+}
