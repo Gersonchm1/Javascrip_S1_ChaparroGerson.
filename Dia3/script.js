@@ -5,7 +5,7 @@ let currentPokemonId = null
 
 function displayPoke(data){
     let informacionHTML = document.getElementById('daticos');
-    currentPokemonId = data.id; // Actualizamos el ID del Pokémon actual
+    currentPokemonId = data.id; 
    
     const gif = data["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"];
     const imagenEstatica = data["sprites"]["front_default"];
@@ -52,7 +52,7 @@ function loadPreviousPokemon() {
 }
 
 function loadNextPokemon() {
-    if (currentPokemonId < 1010) { // Ajusta el límite máximo de Pokémon si es necesario
+    if (currentPokemonId < 1010) {
         fetchPokemon(currentPokemonId + 1);
     }
 }
@@ -60,9 +60,8 @@ function loadNextPokemon() {
 document.getElementById('botoncito').addEventListener('click', loadPreviousPokemon);
 document.getElementById('botoncito2').addEventListener('click', loadNextPokemon);
 
-// Cargar un Pokémon inicial al cargar la página (opcional)
-fetchPokemon(1);
 
+fetchPokemon(1);
 
 
 
